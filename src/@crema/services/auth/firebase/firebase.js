@@ -9,15 +9,12 @@ import {
   signOut,
   sendEmailVerification,
   updateProfile,
+  onAuthStateChanged,
   GoogleAuthProvider,
   GithubAuthProvider,
   FacebookAuthProvider,
   TwitterAuthProvider,
 } from 'firebase/auth';
-
-// import firebase from 'firebase/compat/app';
-// import 'firebase/compat/auth';
-// import 'firebase/compat/firestore';
 
 // Initialize Firebase
 
@@ -32,11 +29,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-console.log('🚀 ~ file: firebase.js ~ line 28 ~ app', app);
-
 const auth = getAuth(app);
-console.log('🚀 ~ file: firebase.js ~ line 31 ~ auth', auth);
-
 const db = getFirestore();
 
 const googleAuthProvider = new GoogleAuthProvider();
@@ -54,6 +47,7 @@ export {
   signOut,
   sendEmailVerification,
   updateProfile,
+  onAuthStateChanged,
   googleAuthProvider,
   githubAuthProvider,
   facebookAuthProvider,

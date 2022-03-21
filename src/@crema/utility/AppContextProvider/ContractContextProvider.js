@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {ethers} from 'ethers';
 import {contractABI, contractAddress} from '../../../utils/Constants';
 import {db} from '../../../@crema/services/auth/firebase/firebase';
-import {addDoc, collection, getDocs} from 'firebase/firestore';
+import {collection, getDocs} from 'firebase/firestore';
 
 export const ContractContext = createContext();
 export const useContractContext = () => useContext(ContractContext);
@@ -124,11 +124,17 @@ export const ContractContextProvider = ({children}) => {
           ],
         });
 
-        await addDoc(collection(db, 'investors'), {
-          contractAddress: currentAccount,
-          investmentAmount,
-          date: Date.now(),
-        });
+        // await addDoc(collection(db, 'investors'), {
+        //   contractAddress: currentAccount,
+        //   investmentAmount,
+        //   date: Date.now(),
+        // });
+
+        // await db.collection('users').doc(user.uid).set({
+        //   contractAddress: currentAccount,
+        //   investmentAmount,
+        //   date: Date.now(),
+        // });
 
         toast.success('Thank you for your investment', {
           containerId: 'B',

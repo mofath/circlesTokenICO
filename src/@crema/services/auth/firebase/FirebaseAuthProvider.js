@@ -7,6 +7,8 @@ import {
   sendEmailVerification,
   updateProfile,
   signInWithPopup,
+  onAuthStateChanged,
+  signOut,
   facebookAuthProvider,
   githubAuthProvider,
   googleAuthProvider,
@@ -39,7 +41,8 @@ const FirebaseAuthProvider = ({children}) => {
   );
 
   useEffect(() => {
-    const getAuthUser = auth.onAuthStateChanged(
+    const getAuthUser = onAuthStateChanged(
+      auth,
       (user) => {
         setFirebaseData({
           user: user,
@@ -107,10 +110,14 @@ const FirebaseAuthProvider = ({children}) => {
     }
   };
 
-  const loginInWithEmailAndPassword = async ({email, password}) => {
+  const logInWithEmailAndPassword = async ({email, password}) => {
     dispatch({type: FETCH_START});
     try {
       const {user} = await signInWithEmailAndPassword(auth, email, password);
+      console.log(
+        '🚀 ~ file: FirebaseAuthProvider.js ~ line 118 ~ logInWithEmailAndPassword ~ user',
+        user,
+      );
       setFirebaseData({user, isAuthenticated: true, isLoading: false});
       dispatch({type: FETCH_SUCCESS});
     } catch (error) {
@@ -157,7 +164,7 @@ const FirebaseAuthProvider = ({children}) => {
   const logout = async () => {
     setFirebaseData({...firebaseData, isLoading: true});
     try {
-      await auth.signOut();
+      await signOut(auth);
       setFirebaseData({
         user: null,
         isLoading: false,
@@ -180,7 +187,7 @@ const FirebaseAuthProvider = ({children}) => {
     >
       <FirebaseActionsContext.Provider
         value={{
-          loginInWithEmailAndPassword,
+          logInWithEmailAndPassword,
           registerUserWithEmailAndPassword,
           logInWithPopup,
           logout,
