@@ -4,7 +4,7 @@ import ICOStats from './ICOStats';
 import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import Box from '@mui/material/Box';
 import {Fonts} from '../../../../shared/constants/AppEnums';
-import {useContractContext} from '@crema/utility/AppContextProvider/ContractContextProvider';
+import {useContractContext} from '@crema/utility/AppContractProvider';
 import {CircularProgress} from '@mui/material';
 
 const ICO = () => {

@@ -4,7 +4,7 @@ import IntlMessages from '../../../../@crema/utility/IntlMessages';
 import {alpha, Box} from '@mui/material';
 import {Fonts} from '../../../../shared/constants/AppEnums';
 import AppCard from '../../../../@crema/core/AppCard';
-import {useContractContext} from '@crema/utility/AppContextProvider/ContractContextProvider';
+import {useContractContext} from '@crema/utility/AppContractProvider';
 import {shortenAddress} from '../../../../utils/ShortenAddress';
 import Invest from '../Invest';
 

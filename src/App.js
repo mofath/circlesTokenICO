@@ -6,6 +6,7 @@ import AppContextProvider from '@crema/utility/AppContextProvider';
 import AppThemeProvider from '@crema/utility/AppThemeProvider';
 import AppStyleProvider from '@crema/utility/AppStyleProvider';
 import AppLocaleProvider from '@crema/utility/AppLocaleProvider';
+import AppContractProvider from '@crema/utility/AppContractProvider';
 import AppLayout from '@crema/core/AppLayout';
 import configureStore, {history} from 'redux/store';
 import FirebaseAuthProvider from './@crema/services/auth/firebase/FirebaseAuthProvider';
@@ -25,13 +26,15 @@ const App = () => (
             <BrowserRouter history={history}>
               <FirebaseAuthProvider>
                 <AuthRoutes>
-                  <ToastContainer
-                    enableMultiContainer
-                    containerId={'B'}
-                    position={toast.POSITION.TOP_RIGHT}
-                  />
-                  <CssBaseline />
-                  <AppLayout />
+                  <AppContractProvider>
+                    <ToastContainer
+                      enableMultiContainer
+                      containerId={'B'}
+                      position={toast.POSITION.TOP_RIGHT}
+                    />
+                    <CssBaseline />
+                    <AppLayout />
+                  </AppContractProvider>
                 </AuthRoutes>
               </FirebaseAuthProvider>
             </BrowserRouter>

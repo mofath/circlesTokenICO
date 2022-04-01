@@ -5,7 +5,7 @@ import IntlMessages from '@crema/utility/IntlMessages';
 import AddInvestForm from './AddInvestForm';
 import PropTypes from 'prop-types';
 import AppDialog from '@crema/core/AppDialog';
-import {useContractContext} from '@crema/utility/AppContextProvider/ContractContextProvider';
+import {useContractContext} from '@crema/utility/AppContractProvider';
 
 const validationSchema = yup.object({
   amount: yup

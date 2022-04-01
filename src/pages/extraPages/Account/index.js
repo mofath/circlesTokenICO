@@ -5,16 +5,9 @@ import Box from '@mui/material/Box';
 import IntlMessages from '@crema/utility/IntlMessages';
 import {BiUser} from 'react-icons/bi';
 import {AiOutlineLock} from 'react-icons/ai';
-import {IoMdInformationCircleOutline} from 'react-icons/io';
-import {IoShareSocialOutline} from 'react-icons/io5';
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AccountTabsWrapper from './AccountTabsWrapper';
 import PersonalInfo from './PersonalInfo';
 import ChangePassword from './ChangePassword';
-import Information from './Information';
-import Social from './Social';
-import Notification from './Notification';
-import accountData from '@crema/services/db/extraPages/account';
 import {AppAnimate} from '../../../@crema';
 import {Fonts} from '../../../shared/constants/AppEnums';
 
@@ -31,21 +24,6 @@ const tabs = [
     id: 2,
     icon: <AiOutlineLock />,
     name: <IntlMessages id='common.changePassword' />,
-  },
-  {
-    id: 3,
-    icon: <IoMdInformationCircleOutline />,
-    name: <IntlMessages id='common.information' />,
-  },
-  {
-    id: 4,
-    icon: <IoShareSocialOutline />,
-    name: <IntlMessages id='common.social' />,
-  },
-  {
-    id: 5,
-    icon: <NotificationsNoneIcon />,
-    name: <IntlMessages id='healthCare.notification' />,
   },
 ];
 
@@ -95,9 +73,6 @@ const Account = () => {
           <Box className='account-tabs-content'>
             {value === 0 && <PersonalInfo />}
             {value === 1 && <ChangePassword />}
-            {value === 2 && <Information />}
-            {value === 3 && <Social social={accountData.member} />}
-            {value === 4 && <Notification />}
           </Box>
         </AccountTabsWrapper>
       </AppAnimate>

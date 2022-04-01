@@ -35,4 +35,5 @@ export {default as AppThemeProvider} from './utility/AppThemeProvider';
 export {default as AppStyleProvider} from './utility/AppStyleProvider';
 export {default as AppLocaleProvider} from './utility/AppLocaleProvider';
 export {default as AppContextProvider} from './utility/AppContextProvider';
+export {default as AppContractProvider} from './utility/AppContractProvider';
 export {default as AuthRoutes} from './utility/AuthRoutes';

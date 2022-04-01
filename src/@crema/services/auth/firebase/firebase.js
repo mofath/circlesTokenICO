@@ -19,13 +19,13 @@ import {
 // Initialize Firebase
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBprnFYTmX6rNoAwZmko0bjHaJEKNeOVnw',
-  authDomain: 'circlestokenico.firebaseapp.com',
-  projectId: 'circlestokenico',
-  storageBucket: 'circlestokenico.appspot.com',
-  messagingSenderId: '266527740607',
-  appId: '1:266527740607:web:258fad98f84d798bdf6c0a',
-  measurementId: 'G-T1JLGL9LGC',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);

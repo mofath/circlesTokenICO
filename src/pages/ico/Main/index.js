@@ -8,6 +8,7 @@ import Wallet from './Wallet';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import AppInfoView from '@crema/core/AppInfoView';
 import AppAnimate from '../../../@crema/core/AppAnimate';
+import Investments from './Investments';
 
 const Main = () => {
   return (
@@ -21,6 +22,10 @@ const Main = () => {
           {/* <Grid item xs={12} md={12}>
             <ICO />
           </Grid> */}
+
+          <Grid item xs={12} md={12}>
+            <Investments />
+          </Grid>
 
           {/* <Grid item xs={12} md={8}>
               <Bitcoin coinGraphData={cryptoData.coinGraphData} />
